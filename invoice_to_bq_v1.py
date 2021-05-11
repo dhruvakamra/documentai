@@ -9,12 +9,12 @@ from google.cloud import documentai_v1beta3 as documentai
 from google.cloud import bigquery
 
 ### Initialize variables#######
-projectid = "dk-cloudfusion-demo"                                       # Your project-id
-location = "us"                                                         # Format is 'us' or 'eu'
-processorid = "b1b76efccbab279b"                                        # Create processor in Cloud Console
-sample_invoice = "/Users/dkamra/Desktop/Demos/DocAI/sample_invoice.pdf" # The local file in your current working directory
-output_bucket="dk-docai-bucket"
-bq_dataset = "document_ai"
+projectid = "<your-project-name>"                                       			# Your project-id
+location = "us"                                                         			# Format is 'us' or 'eu'
+processorid = "<invoice-processor-id>"                                        			# Create processor in Cloud Console
+sample_invoice = "<location-of-file-on-localdisk>" 						# The local file in your current working directory
+output_bucket="<output-bucket-name>"								# GCS Bucket where output CSVs will be uploaded
+bq_dataset = "<your-bq-dataset>"
 invoice_table = "invoice_data"
 inventory_table = "inventory_sold"
 
