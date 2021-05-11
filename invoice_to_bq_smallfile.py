@@ -40,7 +40,6 @@ def load_csv_to_bq(import_file, schema):
 
 ### Instantiate processor 
 processor_name = f'projects/{projectid}/locations/{location}/processors/{processorid}'
-#gcs_source = documentai.types.GcsSource(uri=input_uri)
 
 with open(sample_invoice, 'rb') as image:
     document = {'content': image.read(), 'mime_type': 'application/pdf'}
@@ -49,7 +48,7 @@ with open(sample_invoice, 'rb') as image:
 results = documentai.DocumentProcessorServiceClient().process_document(request=request)
 
 #---------------------------------------------------------------------------------------------------------------------
-
+### We will be using the parse data / entities for two tables viz., invoice and inventory
 ### Invoice Data --- add processor results to a Pandas Dataframe and transform for BQ ingestion
 results_frame = [[entity.type_, entity.mention_text, round(entity.confidence, 4)] for entity in results.document.entities]
 df = pd.DataFrame(results_frame, columns=['type', 'value','confidence'])
