@@ -1,6 +1,6 @@
 # DocumentAI Processing
 This set of scripts provide automation artifacts in Python to:
-1. Make an async (large file) / sync (small file) processing calls to the Document-AI invoice parser
+1. Make an async (small file) processing calls to the Document-AI invoice parser
 2. Process, normalize and transform the output JSON
 3. Create a Pandas dataframe and an output CSV
 4. Upload output CSV to a GCS bucket 
