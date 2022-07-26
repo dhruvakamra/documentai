@@ -1,4 +1,0 @@
-google-cloud-documentai==0.4.0
-google-cloud-storage==1.38.0
-google-cloud-bigquery==2.16.0
-google-cloud-pubsub
